@@ -64,6 +64,7 @@
     "concepts": "cpp",
     "algorithm": "cpp",
     "regex": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "stack": "cpp"
   }
 }
