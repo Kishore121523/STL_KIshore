@@ -139,14 +139,5 @@ int main(){
   v.push_back(1);
   cout << v.empty(); // returns 0
 
-
-
-
-
-
-
-  
-
-
   return 0;
 }

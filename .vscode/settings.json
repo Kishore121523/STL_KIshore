@@ -63,6 +63,7 @@
     "compare": "cpp",
     "concepts": "cpp",
     "algorithm": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "list": "cpp"
   }
 }
