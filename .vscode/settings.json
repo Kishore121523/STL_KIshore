@@ -65,6 +65,7 @@
     "algorithm": "cpp",
     "regex": "cpp",
     "list": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "queue": "cpp"
   }
 }
