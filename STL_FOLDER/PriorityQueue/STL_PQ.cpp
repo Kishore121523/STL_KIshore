@@ -4,8 +4,9 @@ using namespace std;
 
 int main() {
 
-  // The element which has the largest value stays at the top
+  // Max heap - The element which has the largest value stays at the top
   // Not a linear data structure, inside this a tree data structure is maintained
+  // Push -> log(n), Top -> O(1), Pop -> log(n)
 
   priority_queue<int> pq;
   pq.push(5); // {5}
