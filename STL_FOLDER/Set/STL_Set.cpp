@@ -6,7 +6,8 @@ int main(){
 
   // Stores everything in sorted order
   // Stores only unique values
-  // Every function happens in log(n) 
+  // Every function happens in log(n)
+  // unordered set<int> ust; is another data structure similar to set but as the name suggests the elements are stored in no particular order. But every function has constant time complexity O(1) and the worst case goes to O(n) very rarely.
 
   set<int> st;
   st.insert(1); // {1}
@@ -35,6 +36,6 @@ int main(){
   auto it4 = st.find(2);
   auto it5 = st.find(4);
   st.erase(it4, it5); // erases everything from 2 to element before 4 - [first, last)
-  
+
   return 0;
 }
