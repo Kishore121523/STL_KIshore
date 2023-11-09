@@ -23,13 +23,27 @@ int countingNumberOfDigitsUsingLog(int n){
   return count;
 }
 
+int reversingNumber(int n){
+  int revNo = 0;
+  while(n>0){
+    int lastDigit = n%10;
+    revNo = (revNo*10)+lastDigit;
+    n = n/10;
+  }
+
+  return revNo;
+}
+
 int main() {
 
   // Extracting all the digits from a given number N, the digits will be extracted in reverse order
   extractDigits(54321);
   cout<<'\n';
+  
   cout << countingNumberOfDigits(54321) << "\n";
   cout << countingNumberOfDigitsUsingLog(54321) << "\n";
+
+  cout << reversingNumber(54321) << "\n";
 
   return 0;
 }
