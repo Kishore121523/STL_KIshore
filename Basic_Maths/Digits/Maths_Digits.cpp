@@ -34,16 +34,35 @@ int reversingNumber(int n){
   return revNo;
 }
 
+void checkPalindrome(int n){
+  int duplicate = n;
+  int revNum = 0;
+
+  while(n>0){
+    int lastDigit = n%10;
+    revNum = (revNum*10) + lastDigit;
+    n = n/10;
+  }
+  
+  if (revNum == duplicate) cout << "true";
+  else cout << "false";
+}
+
 int main() {
 
   // Extracting all the digits from a given number N, the digits will be extracted in reverse order
   extractDigits(54321);
   cout<<'\n';
-  
+
   cout << countingNumberOfDigits(54321) << "\n";
   cout << countingNumberOfDigitsUsingLog(54321) << "\n";
 
   cout << reversingNumber(54321) << "\n";
+
+  checkPalindrome(121);
+  cout<<'\n';
+
+
 
   return 0;
 }
