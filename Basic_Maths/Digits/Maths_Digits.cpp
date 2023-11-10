@@ -66,7 +66,7 @@ void findDivisors(int n) {
   vector<int> arr;
   // O(sqrt(n)), the loop runs for sqrt(n) times
   for (int i = 1; i*i <= n; i++){
-    if(n%1 == 0) arr.push_back(i); // stores 1,2,3,4,6
+    if(n%i == 0) arr.push_back(i); // stores 1,2,3,4,6
     if(n/i != i) arr.push_back(n/i); // stores 36, 18, 12, 9
   }
 
