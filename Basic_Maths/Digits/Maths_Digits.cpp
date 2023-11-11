@@ -66,9 +66,13 @@ void findDivisors(int n) {
   vector<int> arr;
   // O(sqrt(n)), the loop runs for sqrt(n) times
   for (int i = 1; i*i <= n; i++){
-    if(n%i == 0) arr.push_back(i); // stores 1,2,3,4,6
-    if(n/i != i) arr.push_back(n/i); // stores 36,18,12,9
+    if(n%i == 0){
+      arr.push_back(i); // stores 1,2,3,4,6
+      if((n/i) != i) {
+        arr.push_back(n/i); // stores 36,18,12,9
+      } 
   }
+}
 
   sort(arr.begin(), arr.end()); // O(no_of_factors * log(no_f_factors))
 
@@ -76,6 +80,19 @@ void findDivisors(int n) {
   for(auto it: arr){
     cout << it << ", ";
   }
+
+}
+
+void checkForPrime(int n){
+  int count = 0;
+  for(int i = 1; i*i <= n; i++){
+    if(n%i==0) {
+      count++;
+      if(n/i != i) count++;
+    }
+  }
+  if(count==2) cout << "Prime Number";
+  else cout << "Not a Prime Number";
 }
 
 int main() {
@@ -103,9 +120,9 @@ int main() {
   findDivisors(36);
   cout<<'\n';
 
-
-
-
+  // A number which has exactly 2 factors, which is 1 and itself
+  checkForPrime(17);
+  cout<<'\n';
 
   return 0;
 }
