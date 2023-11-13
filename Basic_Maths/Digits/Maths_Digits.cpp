@@ -112,6 +112,16 @@ void findGCD(int a, int b){
   }
 }
 
+void findGCDEuc(int a, int b){
+  // O(log(min(a,b))) will be the time complexity
+  while(a>0 && b>0){
+    if(a>b) a=a%b;
+    else b=b%a;
+  }
+  if(a==0) cout << b;
+  if(b==0) cout << a;
+}
+
 int main() {
 
   // Extracting all the digits from a given number N, the digits will be extracted in reverse order
@@ -146,6 +156,14 @@ int main() {
   // A number itsef can be a GCD of it, 20 and 40 - 20 is the GCD
   findGCD(20,40);
   cout<<'\n';
+
+  // Euclidean Algorithm for GCD - gcd(a,b) = gcd (a-b,b) where a>b
+  // We can improve the time complexity of the above algorithm by doing a small change
+  //  gcd(a,b) = gcd(a%b,b) where a>b
+  findGCDEuc(20,40);
+  cout<<'\n';
+
+
 
   return 0;
 }
