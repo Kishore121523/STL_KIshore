@@ -51,13 +51,7 @@ void checkPalindrome(int n){
 void checkArmstrongNumber(int n){
   int sum = 0;
   int duplicate = n;
-  int countDigit = n;
-  int count = 0;
-
-  while(countDigit>0){
-    count++;
-    countDigit = countDigit/10;
-  } 
+  int count = log10(n) + 1; // counting digits using log
 
   while(n>0){
     int lastDigit = n%10;
