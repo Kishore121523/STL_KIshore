@@ -51,10 +51,17 @@ void checkPalindrome(int n){
 void checkArmstrongNumber(int n){
   int sum = 0;
   int duplicate = n;
+  int countDigit = n;
+  int count = 0;
+
+  while(countDigit>0){
+    count++;
+    countDigit = countDigit/10;
+  } 
 
   while(n>0){
     int lastDigit = n%10;
-    sum = sum + (lastDigit*lastDigit*lastDigit);
+    sum = sum + pow(lastDigit, count);
     n = n/10;
   }  
 
@@ -95,6 +102,16 @@ void checkForPrime(int n){
   else cout << "Not a Prime Number";
 }
 
+void findGCD(int a, int b){
+  // O(min(a,b)) will be the worst case time complexity
+  for(int i = min(a,b); i>=1; i--){
+    if(a%i==0 && b%i==0){
+      cout << i << " is the GCD";
+      break;
+    }
+  }
+}
+
 int main() {
 
   // Extracting all the digits from a given number N, the digits will be extracted in reverse order
@@ -122,6 +139,12 @@ int main() {
 
   // A number which has exactly 2 factors, which is 1 and itself
   checkForPrime(17);
+  cout<<'\n';
+
+  // GCD or HCF - Largest number that divides 2 numbers A and B
+  // For every number there will always be a GCD, because 1 is a numeber that divides all the number
+  // A number itsef can be a GCD of it, 20 and 40 - 20 is the GCD
+  findGCD(20,40);
   cout<<'\n';
 
   return 0;
