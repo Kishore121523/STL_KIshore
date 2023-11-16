@@ -70,6 +70,13 @@ void reverseArray2(vector<int>& a, int i, int n){
   reverseArray2(a, i+1, n);
 }
 
+bool checkPalindrome(string s, int i, int n){
+  if(i>=n/2) return true;
+  if(s[i] != s[n-i-1]) return false;
+  return checkPalindrome(s,i+1,n);  
+  
+}
+
 int main(){
   // Recursion is a defined as a function calling itself, until a specific condition is mentioned.
   printNUmber(0);
@@ -116,14 +123,16 @@ int main(){
 
   // Reverse an array using 1 pointer
   vector<int> arr2 = {1,5,3,7,6};
-  reverseArray2(arr2,0, arr2.size());
+  reverseArray2(arr2, 0, arr2.size());
 
   for(auto it: arr2){
     cout << it << ", ";
   }
   cout <<"\n";
 
-
+  // Palindrome check - MADAM when reversed spells MADAM
+  string s = "madam";
+  cout << checkPalindrome(s, 0, s.size()) << "\n";
 
   return 0;
 }
