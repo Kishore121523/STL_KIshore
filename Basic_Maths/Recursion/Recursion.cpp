@@ -59,12 +59,15 @@ int factorial(int n){
 }
 
 void reverseArray(vector<int>& a, int l, int r) {
-
   if(l>=r) return;
-
   swap(a[l],a[r]);
-
   reverseArray(a, l+1,r-1);
+}
+
+void reverseArray2(vector<int>& a, int i, int n){
+  if(i>=n/2) return;
+  swap(a[i],a[n-i-1]);
+  reverseArray2(a, i+1, n);
 }
 
 int main(){
@@ -102,13 +105,24 @@ int main(){
   // Factorial of N
   cout << factorial(5) << "\n";
 
-  // Reverse an array
+  // Reverse an array using 2 pointers
   vector<int> arr = {1,3,2,5,4};
   reverseArray(arr, 0, arr.size() - 1);
 
   for(auto it: arr){
     cout << it << ", ";
   }
+  cout <<"\n";
+
+  // Reverse an array using 1 pointer
+  vector<int> arr2 = {1,5,3,7,6};
+  reverseArray2(arr2,0, arr2.size());
+
+  for(auto it: arr2){
+    cout << it << ", ";
+  }
+  cout <<"\n";
+
 
 
   return 0;
