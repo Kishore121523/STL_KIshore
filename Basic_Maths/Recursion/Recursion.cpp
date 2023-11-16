@@ -58,6 +58,15 @@ int factorial(int n){
   return n * factorial(n-1);
 }
 
+void reverseArray(vector<int>& a, int l, int r) {
+
+  if(l>=r) return;
+
+  swap(a[l],a[r]);
+
+  reverseArray(a, l+1,r-1);
+}
+
 int main(){
   // Recursion is a defined as a function calling itself, until a specific condition is mentioned.
   printNUmber(0);
@@ -92,6 +101,14 @@ int main(){
 
   // Factorial of N
   cout << factorial(5) << "\n";
+
+  // Reverse an array
+  vector<int> arr = {1,3,2,5,4};
+  reverseArray(arr, 0, arr.size() - 1);
+
+  for(auto it: arr){
+    cout << it << ", ";
+  }
 
 
   return 0;
