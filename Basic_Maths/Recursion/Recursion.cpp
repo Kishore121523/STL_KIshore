@@ -40,6 +40,24 @@ void printNumberReverseBackTrack(int i, int n){
   cout << i << ", ";
 }
 
+void sumOfNNumbers(int i, int sum){
+  if(i<1){
+    cout << sum;
+    return;
+  }
+  sumOfNNumbers(i-1, sum+i);
+}
+
+int sumOfNNumbers2(int n){
+  if (n==0) return 0; //sum of first 0 numbers is 0 - base case
+  return n + sumOfNNumbers2(n-1);
+}
+
+int factorial(int n){
+  if(n==0) return 1; // 0 factorial is 1 - base case
+  return n * factorial(n-1);
+}
+
 
 int main(){
   // Recursion is a defined as a function calling itself, until a specific condition is mentioned.
@@ -63,9 +81,18 @@ int main(){
   cout << "\n";
 
   // Print reverse from M to N using backtracking
-  printNumberReverseBackTrack(1,10);
+  printNumberReverseBackTrack(1,10);  
+  cout << "\n";
 
+  // Sum of first N numbers in paramaterised way
+  sumOfNNumbers(5,0);
+  cout << "\n";
 
+  // Sum of N numbers
+  cout << sumOfNNumbers2(5) << "\n";
+
+  // Factorial of N
+  cout << factorial(5) << "\n";
 
 
   return 0;
