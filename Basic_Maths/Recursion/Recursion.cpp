@@ -58,7 +58,6 @@ int factorial(int n){
   return n * factorial(n-1);
 }
 
-
 int main(){
   // Recursion is a defined as a function calling itself, until a specific condition is mentioned.
   printNUmber(0);
