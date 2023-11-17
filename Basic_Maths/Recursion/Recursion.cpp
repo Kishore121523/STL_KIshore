@@ -74,7 +74,11 @@ bool checkPalindrome(string s, int i, int n){
   if(i>=n/2) return true;
   if(s[i] != s[n-i-1]) return false;
   return checkPalindrome(s,i+1,n);  
-  
+}
+
+int fibonacci(int n){
+  if(n<=1) return n; // fib(0) its 0 an f(1) its 1.
+  return fibonacci(n-1) + fibonacci(n-2);
 }
 
 int main(){
@@ -133,6 +137,9 @@ int main(){
   // Palindrome check - MADAM when reversed spells MADAM
   string s = "madam";
   cout << checkPalindrome(s, 0, s.size()) << "\n";
+
+  // Fibonacci
+  cout << fibonacci(6) << "\n";
 
   return 0;
 }
