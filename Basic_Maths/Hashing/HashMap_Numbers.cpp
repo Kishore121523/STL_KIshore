@@ -17,7 +17,7 @@ int main(){
   }
 
   // stores in a sorted order of key
-  int max = 0;
+  int max = arr[0];
   for(auto it: mpp){
     cout << it.first << "->" << it.second << "\n";
     if(it.second > max ) max = it.second;
