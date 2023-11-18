@@ -20,7 +20,6 @@ int main(){
   char q=5;
   while(q--){
     cin >> q;
-
     cout << q << " appeared " << mpp[q] << " times" << "\n";
   }
 

@@ -10,14 +10,24 @@ int main(){
 
   // precompute
   map<int,int> mpp; // declaring the hash array and initialising the count with 0
+  
   // unordered_map<int,int> mpp; // can also use unordered_map for this problem
   for(int i=0; i<arr.size(); i++){
     mpp[arr[i]]++;
   }
 
   // stores in a sorted order of key
+  int max = 0;
   for(auto it: mpp){
     cout << it.first << "->" << it.second << "\n";
+    if(it.second > max ) max = it.second;
+  }
+
+  // Printing Keys with maximum frequency
+  for(auto it: mpp){
+    if(it.second == max){
+      cout << "Max Frequency Elements " << it.first <<", \n";
+    }
   }
 
   int q = 5; // number of elements to which we need to find the frequency
