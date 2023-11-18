@@ -3,6 +3,8 @@
 using namespace std;
 
 int main(){
+  // unordered_map<int,int> mpp; // can also use unordered_map for this problem
+  // Map - ordered - O(log n), Unordered Map - Best and avg = O(1) - Worst O(n)
 
   string s = "ababcdez";
   

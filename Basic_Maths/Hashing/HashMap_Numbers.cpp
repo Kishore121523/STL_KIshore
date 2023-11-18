@@ -4,11 +4,13 @@ using namespace std;
 
 int main(){
   // Map<Key, Value> Stores keys and values as a pair. Number - Key and Frequency - Value
+  // Map - ordered - O(log n), Unordered Map - Best and avg = O(1) - Worst O(n)
   int n = 5;
   vector<int> arr = {1,3,2,1,3}; // input array which can have values between 1 to 12
 
   // precompute
   map<int,int> mpp; // declaring the hash array and initialising the count with 0
+  // unordered_map<int,int> mpp; // can also use unordered_map for this problem
   for(int i=0; i<arr.size(); i++){
     mpp[arr[i]]++;
   }
