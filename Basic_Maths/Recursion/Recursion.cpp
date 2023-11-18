@@ -138,7 +138,7 @@ int main(){
   string s = "madam";
   cout << checkPalindrome(s, 0, s.size()) << "\n";
 
-  // Fibonacci
+  // Fibonacci - exponential time complexity 
   cout << fibonacci(6) << "\n";
 
   return 0;
