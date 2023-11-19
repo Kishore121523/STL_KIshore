@@ -13,7 +13,7 @@ int main(){
   
   // unordered_map<int,int> mpp; // can also use unordered_map for this problem
   for(int i=0; i<arr.size(); i++){
-    mpp[arr[i]]++;
+    mpp[arr[i]]++; // increases the corresponding key's(arr elements) value by 1 each time
   }
 
   // stores in a sorted order of key
