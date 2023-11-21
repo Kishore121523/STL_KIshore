@@ -16,11 +16,11 @@ int main(){
     mpp[arr[i]]++; // increases the corresponding key's(arr elements) value by 1 each time
   }
 
-  // stores in a sorted order of key
+  // stores the highest frequency value in max variable 
   int max = arr[0];
   for(auto it: mpp){
     cout << it.first << "->" << it.second << "\n";
-    if(it.second > max ) max = it.second;
+    if(it.second > max) max = it.second;
   }
 
   // Printing Keys with maximum frequency
