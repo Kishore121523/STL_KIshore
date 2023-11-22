@@ -17,6 +17,7 @@ int main(){
   // 9,13,20,24,46,52 - Sorted
   // 6 elements, sorted in 5 stepes - n-1 steps where n is number of elements in input array
 
+  // Time complexity - O(n(n+1)/2) => O(n^2) - best, worst and average
   vector<int> arr = {13,46,24,52,20,9};
   int n = arr.size();
 
