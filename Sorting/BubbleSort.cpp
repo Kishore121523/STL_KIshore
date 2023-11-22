@@ -35,5 +35,26 @@ int main(){
   // 13, 9, 20, 24, 46, 52 - Input from round 4
   // 9, 13, 20, 24, 46, 52 - Compare [13,9] swap
 
+  // n = number of element in the input array (size of array)
+  // n-1 rounds to completely sort the array
+  // Time complexity - O(n^2) - worst and average, O(n) - best
+
+  vector<int> arr = {13, 46, 24, 52, 20, 9};
+  int n = arr.size(); //6
+
+  for(int i=0; i<n-1; i++){
+    for(int j=0; j<n-i-1; j++){
+      if(arr[j] > arr[j+1]){
+        int temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+
+  for(auto it: arr) {
+    cout << it << ", ";
+  }
+
   return 0;
 }
