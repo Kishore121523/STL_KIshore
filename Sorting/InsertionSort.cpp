@@ -10,12 +10,12 @@ int main() {
   // 9, 12, 14, 15, 6p, 8, 13
   // 6, 9, 12, 14, 15, 8, 13
   // 6, 8, 9, 12, 14, 15, 13
-  // 6, 8, 9, 12, 13, 14, 15
+  // 6, 8, 9, 12, 13, 14, 15 - Sorted array
 
   // Running the outer loop from 0 to n-1 times, since it takes 6 steps to sort 7 elements]
   // worst case and average case time complexity - O(n^2)
   // best case time complexity - O(n)
-  
+
   vector<int> arr = {14, 9, 15, 12, 6, 8, 13};
 
   for(int i=0; i<=arr.size()-1; i++){
@@ -35,3 +35,4 @@ int main() {
 
   return 0;
 }
+
