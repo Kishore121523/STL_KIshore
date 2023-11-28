@@ -21,7 +21,7 @@ int main(){
   vector<int> arr = {13,46,24,52,20,9};
   int n = arr.size();
 
-  for (int i=0; i<=n-2; i++){
+  for (int i=0; i<n-1; i++){
     int min = i;
 
     for(int j=i; j<=n-1; j++){
