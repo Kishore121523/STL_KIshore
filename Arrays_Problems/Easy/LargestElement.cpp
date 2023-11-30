@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Sorting and printing last index = O(nlogn), not optimal
+// O(n), optimal solution possible
 int largestElement(vector<int> &arr, int n){
   int largest = arr[0];
 
@@ -14,6 +16,8 @@ int largestElement(vector<int> &arr, int n){
   return largest;
 }
 
+// Sorting and printing last before index = O(nlogn), not optimal
+// O(n), optimal solution possible 
 int secondLargestElement(vector<int> &arr, int n){
   int largest = arr[0];
   int secondLargest = INT_MIN;
