@@ -40,8 +40,7 @@ int main(){
   }
   cout << "\n";
 
- cout << "Number of unique elements in the array: " << removeDuplicateUsingTwoPointer(arr2, n1); // Optimal approach - O(n)
+  cout << "Number of unique elements in the array: " << removeDuplicateUsingTwoPointer(arr2, n1); // Optimal approach - O(n)
 
-  
   return 0;
 }
