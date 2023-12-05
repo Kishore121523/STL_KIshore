@@ -27,19 +27,19 @@ vector<int> findUnionOptimal(vector<int> &arr1, vector<int> &arr2){
 
   while(i<n1 && j<n2){
     if(arr1[i] <= arr2[j]){
-      if(unionArr.size()==0 || unionArr.back() != arr1[i]){
+      if(unionArr.size() == 0 || unionArr.back() != arr1[i]){
           unionArr.push_back(arr1[i]);
       }
       i++;
     }
     else{
-      if(unionArr.size()==0 || unionArr.back() != arr2[j]){
+      if(unionArr.size() == 0 || unionArr.back() != arr2[j]){
           unionArr.push_back(arr2[j]);
       }
       j++;
     }
   }
-  
+
   // When arr1 comes to end, copy all the items in the arr2 to union array
   while(j<n2){
     if(unionArr.size()==0 || unionArr.back() != arr2[j]){
@@ -73,7 +73,7 @@ int main(){
   cout << "\n";
 
   vector<int> unionArr;
-  unionArr = findUnionOptimal(arr1,arr2);
+  unionArr = findUnionOptimal(arr1,arr2); // Optimal approach O(n1+n2)
 
   for(auto it: unionArr){
     cout << it << ", ";
