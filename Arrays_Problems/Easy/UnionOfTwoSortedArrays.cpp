@@ -15,7 +15,6 @@ set<int> findUnion(vector<int> &arr1, vector<int> &arr2){
   }
 
   return st;
-
 }
 
 vector<int> findUnionOptimal(vector<int> &arr1, vector<int> &arr2){
