@@ -106,5 +106,8 @@ int main(){
   for(auto it: interSecArr){
     cout << it << ", ";
   }
+
+  cout << "\n";
+
   return 0;
 }
