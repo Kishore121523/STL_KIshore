@@ -24,7 +24,7 @@ vector<int> findUnionOptimal(vector<int> &arr1, vector<int> &arr2){
   int n2 = arr2.size();
   vector<int> unionArr;
 
-  // When i and j are in the range of the array size given
+  // When i and j are in the range of the array size given enter into the logic
   while(i<n1 && j<n2){
     if(arr1[i] <= arr2[j]){
       if(unionArr.size() == 0 || unionArr.back() != arr1[i]){
