@@ -3,7 +3,7 @@
 using namespace std;
 
 int findMissingNumberHashing(vector<int> &arr, int n){
-  vector<int> hashArray(n+1,0); // creating hashArray with size of n+1 and initialzing everything with 0
+  vector<int> hashArray(n+1,0); // creating hashArray with size of n+1 and initialzing everything with zero
   int missingNumber = 0;
 
   for(int i=0;i<n;i++){
