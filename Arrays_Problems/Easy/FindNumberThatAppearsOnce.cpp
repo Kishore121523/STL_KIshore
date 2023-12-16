@@ -18,9 +18,21 @@ int numberThatAppearsOnce(vector<int> &arr){
   return 0;
 }
 
+int numberThatAppearsOnceOptimal(vector<int> &arr){
+  int n = arr.size();
+  int XOR = 0;
+
+  for(int i=0; i<n; i++){
+    XOR = XOR ^ arr[i];
+  }
+
+  return XOR;
+}
+
 int main(){
   vector<int> arr = {1,1,2,3,3,4,4,5,5};
 
-  cout << numberThatAppearsOnce(arr);
+  cout << numberThatAppearsOnce(arr) << "\n" ;
+  cout << numberThatAppearsOnceOptimal(arr);
   return 0;
 }
