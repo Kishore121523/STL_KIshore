@@ -68,6 +68,8 @@
     "stack": "cpp",
     "queue": "cpp",
     "set": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp"
   }
 }
