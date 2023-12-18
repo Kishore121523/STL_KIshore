@@ -7,26 +7,41 @@ int main(){
   int m = 3;
   vector<int> nums2 = {2,5,6};
   int n = 3;
+  vector<int> nums3(m+n);
 
-  for(int i=m;i<m+n;i++){
-    nums1[i] = nums2[i-m];
-  }
+  int i = 0;
+  int j = 0;
+  int k = 0;
 
-  int size = nums1.size();
-
-  for (int i=0; i<size-1; i++){
-    int min = i;
-
-    for(int j=i; j<=size-1; j++){
-      if(nums1[j] < nums1[min]){
-        min = j;
-      }
+  while(i<m && j<n){
+    if(nums1[i] < nums2[j]){
+      nums3[k] = nums1[i];
+      i++;
+      k++;
+    }else{
+      nums3[k] = nums2[j];
+      j++;
+      k++;
     }
-    // swap
-    int temp = nums1[min];
-    nums1[min] = nums1[i];
-    nums1[i] = temp;
+}
+
+if(i<m){
+  for(int i2=i; i2<m; i2++){
+    nums3[k] = nums1[i2];
+    k++;
   }
+}
+
+if(j<n){
+  for(int i3=j; i3<n; i3++){
+    nums3[k] = nums2[i3];
+    k++;
+  }
+}
+
+ for(auto it: nums3){
+  cout << it << " ";
+ }
 
   return 0;
 }
