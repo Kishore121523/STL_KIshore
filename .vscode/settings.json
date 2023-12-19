@@ -70,6 +70,19 @@
     "set": "cpp",
     "map": "cpp",
     "deque": "cpp",
-    "forward_list": "cpp"
+    "forward_list": "cpp",
+    "__tree": "cpp",
+    "charconv": "cpp",
+    "condition_variable": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "iomanip": "cpp",
+    "scoped_allocator": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "unordered_set": "cpp",
+    "valarray": "cpp"
   }
 }
