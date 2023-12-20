@@ -1,2 +1,3 @@
-cout << it->first << ", " << it->second;
-          // cout << "\n";
+  for(auto it: res){
+    cout << "[" << it  << "],";
+  }
