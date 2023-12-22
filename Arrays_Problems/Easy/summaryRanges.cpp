@@ -31,7 +31,7 @@ vector<string> resArr;
               if(start==end){
                   res += to_string(start);
                   resArr.push_back(res);
-                }
+              }
                 else{
                   res += to_string(start);
                   res += "->";
