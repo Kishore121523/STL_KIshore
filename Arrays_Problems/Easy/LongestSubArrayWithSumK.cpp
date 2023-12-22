@@ -29,16 +29,17 @@ int longestSubArrBetter(vector<int> &arr, int n, long long k){
     }
 
     long long remaining = sum - k;
-
     if(prefSumMap.find(remaining) != prefSumMap.end()){
       int len = i - prefSumMap[remaining];
       maxLen = max(maxLen, len);
     }
 
-    if(prefSumMap.find(sum) != prefSumMap.end()){
-      prefSumMap[sum] = i;
-    }
+    prefSumMap[sum] = i;
+    // if(prefSumMap.find(sum) != prefSumMap.end()){
+    // prefSumMap[sum] = i;
+    // }
   }
+
   return maxLen;
 }
 
@@ -49,13 +50,13 @@ int longestSubArrOptimal(vector<int> &arr, int n, long long k){
 
   while(right<n){
 
+    if(sum == k){
+      maxLen = max(maxLen, right - left + 1 );
+    }    
+
     while(left <= right && sum > k){
       sum -= arr[left];
       left++;
-    }
-
-    if(sum == k){
-      maxLen = max(maxLen, right - left + 1 );
     }
 
     right++;  
