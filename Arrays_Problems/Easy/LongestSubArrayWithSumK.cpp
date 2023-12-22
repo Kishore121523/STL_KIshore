@@ -16,8 +16,27 @@ int longestSubArrBrute(vector<int> &arr, int n, int k){
   return len;
 }
 
-int longestSubArrOptimal(vector<int> &arr, int n, int k){
-  
+int longestSubArrOptimal(vector<int> &arr, int n, long long k){
+  map<long long, int> prefSumMap;
+  long long sum = 0;
+  int maxLen = 0;
+
+  for(int i=0; i<arr.size(); i++){
+    sum += arr[i];
+    if(sum == k) {
+      maxLen = max(maxLen, i+1);
+    }
+
+    long long remaining = sum - k;
+    if(prefSumMap.find(remaining) != prefSumMap.end()){
+      int len = i - prefSumMap[remaining];
+      maxLen = max(maxLen, len);
+    }
+    if(prefSumMap.find(sum) != prefSumMap.end()){
+      prefSumMap[sum] = i;
+    }
+  }
+  return maxLen;
 }
 
 int main(){
