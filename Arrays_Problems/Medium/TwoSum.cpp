@@ -30,6 +30,7 @@ bool twoSumOptimal(vector<int> &arr, int n, int targetSum){
     if(sum == targetSum){
       return true;
     }
+    
     else if(sum < targetSum) left++;
     else right--;
   }
