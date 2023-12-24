@@ -3,6 +3,7 @@
 using namespace std;
 
 bool twoSumBetter(vector<int> &arr, int n, int sum){
+  // using map data structure
   map<int, int> mpp;
 
   for(int i=0; i<n; i++){
@@ -30,7 +31,7 @@ bool twoSumOptimal(vector<int> &arr, int n, int targetSum){
     if(sum == targetSum){
       return true;
     }
-    
+
     else if(sum < targetSum) left++;
     else right--;
   }
