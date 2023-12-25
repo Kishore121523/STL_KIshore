@@ -38,7 +38,7 @@ int majorityElementOptimal(vector<int> &arr){
   }
 
   int cnt1 = 0;
-  // Checking if the found element is majority
+  // Checking if the problem doesn't mention that there will be a majority element all the time
   for(int i=0; i<arr.size(); i++){
     if(arr[i] == ele){
       cnt1++;
