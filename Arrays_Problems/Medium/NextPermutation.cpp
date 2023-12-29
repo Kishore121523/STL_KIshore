@@ -18,7 +18,7 @@ vector<int> nextPermutationOptimal(vector<int> arr){
     return arr;
   }
 
-  for(int i = n-1; i>index; i++){
+  for(int i = n-1; i>index; i--){
     if(arr[i] > arr[index]){
       swap(arr[i], arr[index]);
       break;
@@ -32,7 +32,7 @@ vector<int> nextPermutationOptimal(vector<int> arr){
 
 int main(){
   // {3,1,2} => (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), (3,2,1) a total of 3! = 6 permutations arranged in dictionary order 
-  vector<int> arr = {3,1,2};
+  vector<int> arr = {2,3,1};
   vector<int> ans = {};
   ans = nextPermutationOptimal(arr);
 
