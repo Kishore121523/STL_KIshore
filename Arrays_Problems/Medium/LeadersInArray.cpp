@@ -32,7 +32,7 @@ void findLeadersInArrayOptimal(vector<int> &arr){
   vector<int> ans;
 
   for(int i=n-1;i>=0;i--){
-    if(arr[i] > maxi){
+    if(arr[i] > maxi) {
       maxi = arr[i];
       ans.push_back(arr[i]);
     }
@@ -44,7 +44,7 @@ void findLeadersInArrayOptimal(vector<int> &arr){
 }
 
 int main(){
-  // {10,22,12,3,0,6} => [22,12,6] are the leaders since all the elements to the right of it are smaller than it
+  // {10,22,12,3,0,6} => [22,12,6] are the leaders since all the elements to the right of it are smaller than the number itself
   vector<int> arr = {10,22,12,3,0,6};
 
   findLeadersInArrayBrute(arr);
