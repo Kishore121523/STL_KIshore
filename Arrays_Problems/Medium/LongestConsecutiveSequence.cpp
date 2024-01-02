@@ -34,7 +34,7 @@ int nextPermutationOptimalBetter(vector<int> arr){
   if(arr.size() == 0) return 0;
 
   sort(arr.begin(), arr.end());
-  
+
   int longest = 1;
   int cntCurrent = 0;
   int lastSmallerElement = INT_MIN;
@@ -59,6 +59,28 @@ int nextPermutationOptimalBetter(vector<int> arr){
 }
 
 int nextPermutationOptimalOptimal(vector<int> arr){
+  unordered_set<int> st;
+  int longest = 1;
+
+  if(arr.size() == 0) return 0;
+
+  for(auto it: arr){
+    st.insert(it);
+  }
+
+  for(auto it: st){
+    if(st.find(it-1) == st.end()){
+      int cnt = 1;
+      int x = it;
+      while(st.find(x+1) != st.end()){
+        x += 1;
+        cnt +=1;
+      }
+    longest = max(longest, cnt);
+    }
+  }
+
+  return longest;
 }
 
 int main(){
@@ -70,7 +92,7 @@ int main(){
   cout << nextPermutationOptimalBetter(arr); // O(nlogn) + O(n)
   cout << "\n";
 
-  cout << nextPermutationOptimalOptimal(arr); // O(nlogn) + O(n)
+  cout << nextPermutationOptimalOptimal(arr); // O(n) + O(2n)
   cout << "\n";
 
   return 0;
