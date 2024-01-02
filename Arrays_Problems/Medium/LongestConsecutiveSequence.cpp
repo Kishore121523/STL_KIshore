@@ -11,7 +11,7 @@ bool linearSearch(vector<int> arr, int num){
   return false;
 }
 
-int nextPermutationOptimalBrute(vector<int> arr){
+int longestConsecutiveSequenceBrute(vector<int> arr){
   int n = arr.size();
   int longest = 1;
 
@@ -30,7 +30,7 @@ int nextPermutationOptimalBrute(vector<int> arr){
   return longest;
 }
 
-int nextPermutationOptimalBetter(vector<int> arr){
+int longestConsecutiveSequenceBetter(vector<int> arr){
   if(arr.size() == 0) return 0;
 
   sort(arr.begin(), arr.end());
@@ -58,7 +58,7 @@ int nextPermutationOptimalBetter(vector<int> arr){
 
 }
 
-int nextPermutationOptimalOptimal(vector<int> arr){
+int longestConsecutiveSequenceOptimal(vector<int> arr){
   unordered_set<int> st;
   int longest = 1;
 
@@ -86,13 +86,13 @@ int nextPermutationOptimalOptimal(vector<int> arr){
 int main(){
   // {102,4,100,1,101,3,2,1,1} => return 4 because {1,2,3,4} is the longest consecutive sequence
   vector<int> arr = {15 ,6 ,2 ,1 ,16, 4, 2 ,29, 9, 12 ,8 ,5 ,14, 21 ,8 ,12, 17 ,16, 6 ,26 ,3 };
-  cout << nextPermutationOptimalBrute(arr); // O(n^2)
+  cout << longestConsecutiveSequenceBrute(arr); // O(n^2)
   cout << "\n";
 
-  cout << nextPermutationOptimalBetter(arr); // O(nlogn) + O(n)
+  cout << longestConsecutiveSequenceBetter(arr); // O(nlogn) + O(n)
   cout << "\n";
 
-  cout << nextPermutationOptimalOptimal(arr); // O(n) + O(2n)
+  cout << longestConsecutiveSequenceOptimal(arr); // O(n) + O(2n)
   cout << "\n";
 
   return 0;
