@@ -31,24 +31,46 @@ int nextPermutationOptimalBrute(vector<int> arr){
 }
 
 int nextPermutationOptimalBetter(vector<int> arr){
+  if(arr.size() == 0) return 0;
+
   sort(arr.begin(), arr.end());
+  
   int longest = 1;
   int cntCurrent = 0;
   int lastSmallerElement = INT_MIN;
 
   for(int i=0; i<arr.size(); i++){
+    int currentElement = arr[i];
 
+    if(currentElement-1 == lastSmallerElement){
+      lastSmallerElement = currentElement;
+      cntCurrent++;
+    }
+    else if(currentElement != lastSmallerElement){
+      lastSmallerElement = currentElement;
+      cntCurrent = 1;
+    }
+
+    longest = max(longest, cntCurrent);
   }
 
+  return longest;
+
+}
+
+int nextPermutationOptimalOptimal(vector<int> arr){
 }
 
 int main(){
   // {102,4,100,1,101,3,2,1,1} => return 4 because {1,2,3,4} is the longest consecutive sequence
-  vector<int> arr = {102,4,100,1,101,3,2,1,1};
+  vector<int> arr = {15 ,6 ,2 ,1 ,16, 4, 2 ,29, 9, 12 ,8 ,5 ,14, 21 ,8 ,12, 17 ,16, 6 ,26 ,3 };
   cout << nextPermutationOptimalBrute(arr); // O(n^2)
   cout << "\n";
 
-  cout << nextPermutationOptimalBetter(arr); // O(n^2)
+  cout << nextPermutationOptimalBetter(arr); // O(nlogn) + O(n)
+  cout << "\n";
+
+  cout << nextPermutationOptimalOptimal(arr); // O(nlogn) + O(n)
   cout << "\n";
 
   return 0;
