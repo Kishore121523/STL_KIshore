@@ -42,11 +42,9 @@ vector<int> rotateMatrixBy90Brute(vector<vector<int>> &matrix){
         }
         left++;
       }
-    
   }
 
   return ans;
-
 }
 
 int main(){
