@@ -23,26 +23,49 @@ void rotateMatrixBy90Brute(vector<vector<int>> &matrix){
   }
 
 }
-void rotateMatrixBy90Better(vector<vector<int>> &matrix){
 
-  int n = matrix.size();
+void reverseArr(vector<int> &arr, int n){
+  int p1=0; 
+  int p2 = n-1;
 
+  while(p1<p2){
+    swap(arr[p1], arr[p2]);
+    p1++;
+    p2--;
+  }
 }
 
 void rotateMatrixBy90Optimal(vector<vector<int>> &matrix){
+  // Transpose and reverse every row
+  int n = matrix.size();
 
-  int noOfRows = matrix.size(); // no of columns
-  int noOfCols = matrix[0].size(); // no of rows
+  // Transpose
+  for(int i=0; i<n-1; i++){
+    for(int j=i+1; j<n; j++){
+        swap(matrix[i][j], matrix[j][i]);
+      }
+  }
 
+  // Reverse every row
+  for(int i=0; i<n;i++){
+    reverseArr(matrix[i], n);
+  }
+
+  for(int i=0; i<n; i++){
+      for(int j=0; j<n; j++){
+          cout << matrix[i][j] << " ";
+      }
+      cout << "\n";
+  }
 }
+
 
 int main(){
   // find zero in the matrix and mark every element in that column and row as 0
   vector<vector<int>> matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-  vector<vector<int>> matrix2 = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
 
   rotateMatrixBy90Brute(matrix); // TC = O(n*n) and SC = O(n*n)
-  rotateMatrixBy90Better(matrix); // TC = O(2*(n*m)) and SC = O(n) + O(m)
-  rotateMatrixBy90Optimal(matrix); // 
+  cout<<"\n";
+  rotateMatrixBy90Optimal(matrix); // TC = O(n/2*n/2) + O(n*n/2) and SC = No extra space
   return 0;
 }
