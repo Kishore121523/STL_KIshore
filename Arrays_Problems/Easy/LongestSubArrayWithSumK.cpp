@@ -50,19 +50,20 @@ int longestSubArrOptimal(vector<int> &arr, int n, long long k){
 
   while(right<n){
 
-    if(sum == k){
-      maxLen = max(maxLen, right - left + 1 );
-    }    
-
-    while(left <= right && sum > k){
-      sum -= arr[left];
-      left++;
-    }
-
     right++;  
     if(right<n){
       sum += arr[right];
     }
+
+    while(left <= right && sum > k){
+      sum -= arr[left];
+      left++;
+    }    
+
+    if(sum == k){
+      maxLen = max(maxLen, right - left + 1 );
+    }   
+
   }
   return maxLen;
 }
