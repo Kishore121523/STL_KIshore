@@ -53,6 +53,7 @@ int main(){
   cout << lowerBound(arr,n,targetElement); // TC = O(log2N)
   cout << upperBound(arr,n,targetElement); // TC = O(log2N)
 
+  // Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
   cout << searchInsertPosition(arr,n,targetElement);
 
   return 0;
