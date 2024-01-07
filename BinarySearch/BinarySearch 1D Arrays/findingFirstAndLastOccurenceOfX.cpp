@@ -58,7 +58,6 @@ int binarySearchLowerIndex(vector<int> &arr, int n, int target){
   int high = n-1;
   int firstOccurence = -1;
 
-
   while(low<=high){
     int mid = low + (high-low)/2;
 
@@ -69,9 +68,9 @@ int binarySearchLowerIndex(vector<int> &arr, int n, int target){
     else if (target > arr[mid]) low = mid+1;
     else high = mid - 1;  
   }
-
   return firstOccurence;
 }
+
 int binarySearchUpperIndex(vector<int> &arr, int n, int target){
   int low = 0;
   int high = n-1;
@@ -87,7 +86,6 @@ int binarySearchUpperIndex(vector<int> &arr, int n, int target){
     else if (target > arr[mid]) low = mid+1;
     else high = mid - 1;  
   }
-
   return lastOccurence;
 }
 
