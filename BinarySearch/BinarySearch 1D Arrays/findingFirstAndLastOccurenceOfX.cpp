@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Using lower bound and upper bound
+
 int lowerBound(vector<int> &arr, int n, int target){
   int low = 0;
   int high = n-1;
@@ -49,6 +51,8 @@ vector<int> findFirstAndLastOccurenceOfNumber(vector<int> &arr, int n, int targe
 
 }
 
+// Using binary Search
+
 int binarySearchLowerIndex(vector<int> &arr, int n, int target){
   int low = 0;
   int high = n-1;
@@ -89,7 +93,7 @@ int binarySearchUpperIndex(vector<int> &arr, int n, int target){
 
 vector<int> findFirstAndLastOccurenceOfNumberBinarySearch(vector<int> &arr, int n, int target){
 
-  int lowerIndex = binarySearchLowerIndex(arr,n,target);
+  int lowerIndex = binarySearchLowerIndex(arr,n,target); 
   if(lowerIndex == -1) return {-1,-1};
   int upperIndex = binarySearchUpperIndex(arr,n,target);
 
@@ -101,13 +105,12 @@ vector<int> findFirstAndLastOccurenceOfNumberBinarySearch(vector<int> &arr, int 
 int main(){
   vector<int> arr = {5,7,7,8,8,10};
   int n = arr.size();
-  int targetElement = 6;
+  int targetElement = 8;
   vector<int> ans;
   vector<int> ans2;
 
   ans = findFirstAndLastOccurenceOfNumber(arr,n,targetElement); // TC = 2 * O(log2N) 
-  ans2 = findFirstAndLastOccurenceOfNumberBinarySearch(arr,n,targetElement); // TC = 2 * O(log2N) 
-
+  ans2 = findFirstAndLastOccurenceOfNumberBinarySearch(arr,n,targetElement); // TC = 2 * O(log2N)
 
   for(auto it: ans){
     cout << it << ", ";
@@ -116,6 +119,11 @@ int main(){
   for(auto it: ans2){
     cout << it << ", ";
   }
+  cout << "\n";
+
+    // counting occurences of an element
+  if(ans[0] == -1) cout << 0;
+  else cout << ans[1] - ans[0] + 1;
 
   return 0;
 }
