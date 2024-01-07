@@ -1,4 +1,5 @@
-else if(arr[mid] > target){
-      upperIndex = mid;
-      high = mid - 1;
+ if (arr[low] == arr[mid] && arr[mid] == arr[high]){
+      low += 1;
+      high -= 1;
+      continue;
     }
