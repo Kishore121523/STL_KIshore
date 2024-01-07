@@ -10,6 +10,11 @@ int findMinimumInRotatedSortedArrayElements(vector<int> &arr, int n){
   while(low<=high){
     int mid = low + (high-low)/2;
 
+    if(arr[low] <= arr[high]){
+      minElement = min(arr[low], minElement);
+      break;
+    }
+
     // Left half is sorted, hence take the smallest and elimate the left half
     if(arr[low] <= arr[mid]){
       minElement = min(arr[low], minElement);
