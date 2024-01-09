@@ -18,7 +18,7 @@ int totalHoursFoo(vector<int> &arr, int hours){
     totalHours += ceil((double)arr[i]/(double)hours);
   }
 
-  return totalHours;
+  return totalHours;          
 }
 
 int kokoEatingBananas(vector<int> &arr, int h){
