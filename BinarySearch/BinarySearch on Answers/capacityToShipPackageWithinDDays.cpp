@@ -59,7 +59,7 @@ int main(){
   int n = arr.size();
   int days = 5;
 
-  cout << capacityToShipPackageWithinDDays(arr,n, days); // TC = O(log2(max)*N)
+  cout << capacityToShipPackageWithinDDays(arr,n, days); // TC = O(log2(sum-max+1)*N)
   cout << "\n";
 
   return 0;
