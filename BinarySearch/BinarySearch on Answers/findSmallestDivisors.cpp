@@ -45,7 +45,7 @@ int main(){
   int n = arr.size();
   int threshold = 6;
 
-  cout << findSmallestDivisor(arr,n, threshold); // TC = O(log2N)
+  cout << findSmallestDivisor(arr,n, threshold); // TC = O(log2(max)*N)
   cout << "\n";
 
   return 0;
