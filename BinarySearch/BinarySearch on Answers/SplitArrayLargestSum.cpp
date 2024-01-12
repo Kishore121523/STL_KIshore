@@ -8,9 +8,9 @@ int countPaintersFoo(vector<int> &arr, int sumPossible){
 
   for(int i=0 ;i<arr.size(); i++){
     if(bricksInTheWall+arr[i] <= sumPossible){
-      bricksInTheWall += arr[i];
+      bricksInTheWall += arr[i]; //assign the bricks to the same painter
     }else{
-      painterCount++;
+      painterCount++; // increase the painter 
       bricksInTheWall = arr[i];
     }
   }
