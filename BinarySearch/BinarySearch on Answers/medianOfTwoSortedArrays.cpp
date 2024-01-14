@@ -2,7 +2,7 @@
 
 using namespace std;
 
-double medianOfTwoSortedArray(vector<int> &arr1,vector<int> &arr2){
+double medianOfTwoSortedArrayBetter(vector<int> &arr1,vector<int> &arr2){
   int n1 = arr1.size();
   int n2 = arr2.size();
   int n = (n1+n2);
@@ -45,11 +45,18 @@ double medianOfTwoSortedArray(vector<int> &arr1,vector<int> &arr2){
   return (double)((double)(ind1el + ind2el))/2.0;
   }
 
+double medianOfTwoSortedArrayOptimal(vector<int> &arr1,vector<int> &arr2){
+  
+}
+
+
+
 int main(){
   vector<int> arr1 = {};
   vector<int> arr2 = {2,3}; 
 
-  cout << medianOfTwoSortedArray(arr1,arr2); // TC = O(log2N)
+  cout << medianOfTwoSortedArrayBetter(arr1,arr2); // TC = O(n1+n2)
+  cout << medianOfTwoSortedArrayOptimal(arr1,arr2); // TC = O(log2N)
   cout << "\n";
 
   return 0;
