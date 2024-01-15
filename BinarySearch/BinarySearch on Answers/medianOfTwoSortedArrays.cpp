@@ -52,16 +52,16 @@ double medianOfTwoSortedArrayOptimal(vector<int> &arr1,vector<int> &arr2){
   if(n1>n2) return medianOfTwoSortedArrayBetter(arr2,arr1); // to perform the binary search on the smaller array, and this makes sure that arr1 is always the smaller arary
 
   int low = 0;
-  int high = n1;
-  int noOfElemenentsinLeft = (n1+n2+1)/2;
-  int n = n1+n2;
+  int high = n1; // take the high as the size of smaller array (n1)
+  int noOfElemenentsinLeft = (n1+n2+1)/2; // 5 - no of elements in left after combining both
+  int n = n1+n2; // 10
 
   while(low<=high){
-    int mid1 = low+(high-low)/2;
-    int mid2 = noOfElemenentsinLeft - mid1;
+    int mid1 = low+(high-low)/2; // 2
+    int mid2 = noOfElemenentsinLeft - mid1; // 3
 
-    int l1 = INT_MIN, l2=INT_MIN;
-    int r1 = INT_MAX, r2=INT_MAX;
+    int l1 = INT_MIN, l2 = INT_MIN;
+    int r1 = INT_MAX, r2 = INT_MAX;
 
     if(mid1<n1) r1= arr1[mid1];
     if(mid2<n2) r2= arr2[mid2];
@@ -81,8 +81,8 @@ return -1;
 
 
 int main(){
-  vector<int> arr1 = {1,3,4,7,10,12};
-  vector<int> arr2 = {2,3,6,15}; 
+  vector<int> arr1 = {1,3,4,7,10,12}; // 6
+  vector<int> arr2 = {2,3,6,15}; // 4
 
   cout << medianOfTwoSortedArrayBetter(arr1,arr2); // TC = O(n1+n2)
   cout << medianOfTwoSortedArrayOptimal(arr1,arr2); // TC = O(min(logm,logn))
