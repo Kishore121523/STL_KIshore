@@ -1,0 +1,23 @@
+- It is an data structure which allows us to increase or decrease the size at any moment
+- LL is an similar data structure to vectors or arrays but they are not in contiguous memory location like arrays
+- LL uses heap memory hence not contiguous memory location
+
+- Starting point of the LL is called as "head"
+- We store "next" along with the data in LL which says the memory location of the next element of LL in heap memory
+- Last element's of LL is called "tail" and the "next" will be a "nullptr"
+
+Steps to Increase the size of the LL:
+  - Add a new node with data 8 to the LL
+  - Put the new node 8 in the heap memory at random location
+  - Change the previous tail's "next" to memory location of new node 8 and make the "next" of new node's tail as "nullptr"
+
+Where is it used?
+  - Stack and Queue data strcutures, In real life we always used in browser tabs
+
+Memory Space Used:
+  - 32 bit system - total 8 bytes
+    int - 4 bytes
+    * pointer - 4 bytes 
+  - 64 bit system - total 8 bytes
+    int - 8 bytes
+    * pointer - 8 bytes 
