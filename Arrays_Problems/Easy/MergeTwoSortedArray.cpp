@@ -26,15 +26,15 @@ int main(){
 }
 
 if(i<m){
-  for(int i2=i; i2<m; i2++){
-    nums3[k] = nums1[i2];
+  for(int i=i; i<m; i++){
+    nums3[k] = nums1[i];
     k++;
   }
 }
 
 if(j<n){
-  for(int i3=j; i3<n; i3++){
-    nums3[k] = nums2[i3];
+  for(int i=j; i<n; i++){
+    nums3[k] = nums2[i];
     k++;
   }
 }
