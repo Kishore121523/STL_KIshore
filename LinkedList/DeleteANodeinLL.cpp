@@ -51,8 +51,43 @@ Node* deleteHead(Node* head){
   return head;
 }
 
+Node* deleteTail(Node* head){
+  if(head==NULL || head->next == NULL) return NULL;
+  Node* temp = head;
+  while(temp->next->next != NULL){
+    temp = temp->next;
+  }
+  free(temp->next);
+  temp->next = NULL;
+  return head;
+
+}
+
+Node* deleteKthElement(Node* head, int k){
+  if(head == NULL) return NULL;
+  if(k==1){
+    head = head->next;
+    return head;
+  }
+
+  int cnt = 0;
+  Node* temp = head;
+  Node* prev = NULL;
+
+  while(temp != NULL){
+    cnt++;
+    if(cnt==k){
+      prev->next = prev->next->next;
+      free(temp);
+      return head;
+    }
+    prev = temp;
+    temp = temp->next;
+  }
+}
+
 int main(){
-  vector<int> arr = {2,5,6,7};
+  vector<int> arr = {2,5,6,7,8,9};
   Node* head = convertToLL(arr);
 
   // Prints all the elements in the LL
@@ -60,6 +95,15 @@ int main(){
 
   // Deleting head node
   head = deleteHead(head);
+  travereLL(head);
+
+  //deleteTail
+  head = deleteTail(head);
+  travereLL(head);
+
+  //delete kth element
+  int val = 3;
+  head = deleteKthElement(head,val);
   travereLL(head);
 
 
