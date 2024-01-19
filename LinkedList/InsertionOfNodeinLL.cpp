@@ -71,7 +71,7 @@ Node* insertAtK(Node* head, int k, int val3){
       Node* newHead = new Node(val3);
       return newHead;
     }else{
-      cout << "Not possible insert element";
+      return head;
     }
   }
 
@@ -98,6 +98,28 @@ Node* insertAtK(Node* head, int k, int val3){
   return head;
 }
 
+Node* insertEleBeforeEle(Node* head, int ele, int val4){
+  if(head==NULL) return NULL;
+
+  if(head->data == val4){
+    Node* newHead = new Node(ele);
+    newHead->next = head;
+    return newHead;
+  }
+
+  Node* temp = head;
+  while(temp->next != NULL){
+    if(temp->next->data == val4){
+      Node* newEle = new Node(ele);
+      newEle->next = temp->next;
+      temp->next = newEle;
+      break;
+    }
+  temp = temp->next;
+  }
+  return head;
+}
+
 
 int main(){
   vector<int> arr = {2,5,6,7};
@@ -107,7 +129,7 @@ int main(){
   travereLL(head);
 
   // Inserting a new node in head
-  int val1 = 5;
+  int val1 = 25;
   head = insertInHead(head, val1);
   travereLL(head);
 
@@ -119,6 +141,11 @@ int main(){
   // Inserting a new node at kth position
   int k = 4, val3 = 22;
   head = insertAtK(head, k, val3);
+  travereLL(head);
+
+  // Inserting ele before val4
+  int ele = 4, val4 = 25;
+  head = insertEleBeforeEle(head, ele, val4);
   travereLL(head);
 
 
