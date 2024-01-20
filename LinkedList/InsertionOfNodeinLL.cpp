@@ -101,6 +101,7 @@ Node* insertAtK(Node* head, int k, int val3){
 Node* insertEleBeforeEle(Node* head, int ele, int val4){
   if(head==NULL) return NULL;
 
+  // if only head is present in the linked list
   if(head->data == val4){
     Node* newHead = new Node(ele);
     newHead->next = head;
