@@ -43,6 +43,7 @@ Node* convertToLL(vector<int> &arr){
   return head;
 }
 
+// Insert new element at first index
 Node* insertInHead(Node* head, int val){
   Node* newHead = new Node(val);
   newHead->next = head;
@@ -50,6 +51,7 @@ Node* insertInHead(Node* head, int val){
   return newHead;
 }
 
+// Insert new element to the last
 Node* insertInTail(Node* head, int val){
   if(head == NULL) return new Node(val);
 
