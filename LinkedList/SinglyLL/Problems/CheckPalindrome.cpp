@@ -79,8 +79,20 @@ bool palindromOptimal(Node* head){
   }
 
   Node* newHead = reverseLL(slow->next);
+  Node* first = head;
+  Node* second = newHead;
 
- return true;
+  while(second!=NULL){
+    if(first->data!=second->data){
+      reverseLL(newHead);
+      return false;
+    }
+    first = first->next;
+    second = second->next;
+  }
+
+  reverseLL(newHead);
+  return true;
 }
 
 
@@ -95,7 +107,7 @@ int main(){
 
   cout << "\n";
 
-  cout << palindromOptimal(head2); // O(N)
+  cout << palindromOptimal(head2); // O(2N) and SC is O(1)
 
   return 0;
 
