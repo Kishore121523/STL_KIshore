@@ -123,7 +123,7 @@ int main(){
 
   //delete kth element
   val = 2;
-  head = deleteFromLastOptimal(head2,val);
+  head = deleteFromLastOptimal(head2,val); // O(len)
   travereLL(head);
 
   return 0;
