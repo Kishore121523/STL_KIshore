@@ -34,12 +34,59 @@ Node* convertToLL(vector<int> &arr){
 }
 
 Node* oddEvenNaive(Node* head){
+  if(head == NULL ||head->next==NULL) return head;
+  
+  Node* temp = head;
+  vector<int> arr;
+
+  while(temp && temp->next){
+    arr.push_back(temp->data);
+    temp = temp->next->next;
+  }
+
+  if(temp){
+    arr.push_back(temp->data);
+  }
+
+  temp = head->next;
+
+  while(temp && temp->next){
+    arr.push_back(temp->data);
+    temp = temp->next->next;
+  }
+
+  if(temp){
+    arr.push_back(temp->data);
+  }
+
+  int i = 0;
+  temp = head;
+
+  while(temp){
+    temp->data = arr[i];
+    i++;
+    temp = temp->next;
+  }
 
   return head;
   
 }
 
 Node* oddEvenOptimal(Node* head){
+  if(head == NULL ||head->next==NULL) return head;
+  
+  Node* tempOdd = head;
+  Node* tempEven = head->next;
+  Node* secondNode = head->next;
+
+  while(tempEven && tempEven->next){
+    tempOdd->next = tempOdd->next->next;
+    tempOdd = tempOdd->next;
+    tempEven->next = tempEven->next->next;
+    tempEven = tempEven->next;
+  }
+
+  tempOdd->next = secondNode;
 
   return head;
   
@@ -56,7 +103,7 @@ void traverseLL(Node* head){
 
 
 int main(){
-  vector<int> arr = {2,5,6,7,9,10};
+  vector<int> arr = {1,2,3,4,5};
   Node* head = convertToLL(arr);
   Node* head2 = convertToLL(arr);
 
