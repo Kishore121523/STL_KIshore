@@ -73,11 +73,11 @@ Node* findMiddle(Node* head){
     fast = fast->next->next;
   }
 
-  return prevSlow;
+  return prevSlow; // returns the first middle and not the second
 }
 
 Node* merge2LL(Node* list1, Node* list2){
-  Node* dummyNode = new Node(-1);
+  Node* dummyNode = new Node(-1); // creates a new node with data as -1 and next as 1
   Node* temp = dummyNode;
 
   while(list1 && list2){
@@ -104,7 +104,8 @@ Node* sortLLOptimal(Node* head){
   Node* middle = findMiddle(head);
   Node* leftHead = head;
   Node* rightHead = middle->next;
-  middle->next = NULL;
+
+  middle->next = NULL; // if we split the list into left and right, left->next should be null
 
   leftHead = sortLLOptimal(leftHead);
   rightHead = sortLLOptimal(rightHead);
