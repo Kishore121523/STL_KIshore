@@ -5,3 +5,18 @@ Types of binary trees:
 3) Perfect Binary Trees - All leaf nodes are in the same level
 4) Balanced Bianry Trees - Height of the tree can be at a maximum of log(N), if no of nodes is 8 then at max the height should be 3
 5) Degenerate Trees - It's a tree in which every node has one children (linked list)
+
+Traversals in Binary Trees:
+
+             1
+      2              3
+  4       5      6       7
+
+DFS:
+1) Inorder Traversal(Root will be IN i.e, Middle) = LEFT ROOT RIGHT (4 2 5 1 6 3 7)
+2) Pre Order Traversal(Root will be PRE i.e, First) = ROOT LEFT RIGHT (1 2 4 5 3 6 7)
+3) Post Order Traversal(Root will be POST i.e, LAST) = LEFT RIGHT ROOT (4 5 2 6 7 3 1)
+
+
+BFS:
+1) 1 2 3 4 5 6 7 - Goes level wise
