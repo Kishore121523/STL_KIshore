@@ -1,0 +1,7 @@
+Types of binary trees:
+
+1) Full Binary tree - All the nodes should have either 0 or 2 children
+2) Complete Binary Trees - All levels are completely filled except the last level and last level has all nodes as left as possible
+3) Perfect Binary Trees - All leaf nodes are in the same level
+4) Balanced Bianry Trees - Height of the tree can be at a maximum of log(N), if no of nodes is 8 then at max the height should be 3
+5) Degenerate Trees - It's a tree in which every node has one children (linked list)
