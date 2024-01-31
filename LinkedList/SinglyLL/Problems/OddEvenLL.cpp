@@ -86,6 +86,7 @@ Node* oddEvenOptimal(Node* head){
     tempEven = tempEven->next;
   }
 
+  // This is to link last node of ODD to first node of EVEN
   tempOdd->next = secondNode;
 
   return head;
