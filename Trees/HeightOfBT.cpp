@@ -25,6 +25,24 @@ int findHeight (Node* root){
   return 1+max(lh,rh);
 }
 
+int dfsHeight(Node* root){  
+  // For every node, height(left) - height(right) <=1
+  if(root == NULL) return 0;
+
+  int lh = findHeight(root->left);
+  if(lh==-1) return -1;
+  int rh = findHeight(root->right);
+  if(rh==-1) return -1;
+
+  if(abs(lh-rh) > 1) return -1;
+
+  return 1+max(lh,rh);
+}
+
+bool checkBalanced(Node* root){
+  return dfsHeight(root)!=-1;
+}
+
 int main(){
   Node* root = new Node(1);
   root->left = new Node(2);
@@ -37,4 +55,6 @@ int main(){
 
   cout << findHeight(root); // TC and SC - O(N)
   cout << "\n";
-}
+  cout << checkBalanced(root); // TC and SC - O(N) * O(N)
+  cout << "\n";
+} 
