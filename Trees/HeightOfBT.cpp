@@ -29,10 +29,10 @@ int dfsHeight(Node* root){
   // For every node, height(left) - height(right) <=1
   if(root == NULL) return 0;
 
-  int lh = findHeight(root->left);
-  if(lh==-1) return -1;
-  int rh = findHeight(root->right);
-  if(rh==-1) return -1;
+  int lh = dfsHeight(root->left);
+  if(lh==-1) return -1; // if anything returns  -1 then break
+  int rh = dfsHeight(root->right);
+  if(rh==-1) return -1; // if anything returns  -1 then break
 
   if(abs(lh-rh) > 1) return -1;
 
