@@ -16,22 +16,22 @@ class Node{
   }
 };
 
-int height(Node* node, int &diameter){
+int maxPath(Node* node, int &maxi){
 if(node == NULL) return 0;
 
-  int lh = height(node->left,diameter);
-  int rh = height(node->right,diameter);
+  int lh = max(0, maxPath(node->left,maxi));
+  int rh = max(0,maxPath(node->right,maxi));
 
-  diameter = max(diameter,lh+rh);
+  maxi = max(maxi, lh+rh+node->data);
 
-  return 1+max(lh,rh);
+  return (node->data) + max(lh,rh);
 }
 
-int maximumPathSumOptimal (Node* root, int maxi){
+int maximumPathSumOptimal (Node* root){
   // Longest path between any 2 nodes and the path need not necessarily pass through root
-  int diameter = 0;
-  height(root, diameter);
-  return diameter;
+  int maxi = INT_MIN;
+  maxPath(root, maxi);
+  return maxi;
 }
 
 
@@ -45,7 +45,7 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  cout << maximumPathSumOptimal(root,0); // TC - O(N^2)
+  cout << maximumPathSumOptimal(root); // TC - O(N^2)
   cout << "\n";
   
 } 
