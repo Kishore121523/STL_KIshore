@@ -45,7 +45,7 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  cout << maximumPathSumOptimal(root); // TC - O(N^2)
+  cout << maximumPathSumOptimal(root);
   cout << "\n";
   
 } 
