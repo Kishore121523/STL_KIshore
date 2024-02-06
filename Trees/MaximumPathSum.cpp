@@ -17,8 +17,9 @@ class Node{
 };
 
 int maxPath(Node* node, int &maxi){
-if(node == NULL) return 0;
+  if(node == NULL) return 0;
 
+  // if lh or rh sum is returned as negative number, then replace it with 0 as negative doesn't help in maximising the sum
   int lh = max(0, maxPath(node->left,maxi));
   int rh = max(0,maxPath(node->right,maxi));
 
