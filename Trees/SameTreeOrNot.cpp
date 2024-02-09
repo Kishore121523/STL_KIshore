@@ -23,6 +23,7 @@ bool sameTreeOrNot(Node* root,Node* root2){
   return (root->data == root2->data) && sameTreeOrNot(root->left, root2->left) && sameTreeOrNot(root->right, root2->right);
 }
 
+// Same tree or Not check code
 int main(){
   Node* root = new Node(1);
   root->left = new Node(2);
