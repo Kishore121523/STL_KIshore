@@ -15,15 +15,12 @@ class Node{
 
 };
 
-void preOrder(Node* root){
+void zigZag(Node* root){
 
 
 }
 
-void inOrder(Node* root){
 
-
-}
 
 int main(){
   Node* root = new Node(1);
@@ -35,16 +32,8 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  // root->left->right->left = new Node(6); 
-  // root->right->right->left = new Node(9); 
-  // root->right->right->right = new Node(10); 
-
-  preOrder(root); // TC and SC - O(N)
+  zigZag(root); // TC and SC - O(N)
   cout << "\n";
-  inOrder(root); // TC and SC - O(N)
-
-  cout << "\n";
-
 
   return 0;
 }
