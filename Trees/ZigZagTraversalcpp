@@ -16,7 +16,7 @@ class Node{
 };
 
 void zigZag(Node* root){
-
+  
 
 }
 
