@@ -15,41 +15,56 @@ class Node{
 
 };
 
-vector<vector<int>> boundaryTraversal(Node* root){
-  vector<vector<int>> result;
-  if(root == NULL){
-    return result;
+bool isLeaf(Node* root){
+  if(!root->left && !root->right) return true;
+  else return false;
+}
+
+void addLeftBoundary(Node* root, vector<int> &res){
+  Node* cur = root->left;
+  while(cur){
+    if(!isLeaf(cur)) res.push_back(cur->data);
+    if(cur->left) cur = cur->left;
+    else cur = cur->right;
+  }
+}
+
+void addRightBoundary(Node* root, vector<int> &res){
+  Node* cur = root->right;
+  vector<int> temp;
+  while(cur){
+    if(!isLeaf(cur)) temp.push_back(cur->data);
+    if(cur->right) cur = cur->right;
+    else cur = cur->left;
   }
 
-  queue<Node*> nodesQueue;
-  nodesQueue.push(root);
-  bool leftToRight = true;
-
-  while(!nodesQueue.empty()){
-    int size = nodesQueue.size();
-    vector<int> row;
-
-    for(int i=0; i<size;i++){
-      Node* newNode = nodesQueue.front();
-      nodesQueue.pop();
-
-      int indexToInsert = (leftToRight) ? i : (size-1-i);
-
-      row[indexToInsert] = newNode->data;
-
-      if(newNode->left != NULL) nodesQueue.push(newNode->left);
-      if(newNode->right != NULL) nodesQueue.push(newNode->right);
-      row.push_back(newNode->data);
-    }
-
-    leftToRight = !leftToRight;
-     for(auto it2: row){
-      cout << it2 << " ";
-    }
-    result.push_back(row);
+  for(int i=temp.size(); i>=0; i--){
+    res.push_back(temp[i]);
   }
 
-return result;
+}
+
+void addLeaves(Node* root, vector<int> &res){
+  if(isLeaf(root)){
+    res.push_back(root->data);
+    return;
+  }
+  if(root->left) addLeaves(root->left, res);
+  if(root->right) addLeaves(root->right, res);
+}
+
+
+
+vector<int> boundaryTraversal(Node* root){
+  // left boundary traversal without leaf - leaf - right boundary traversal without leaf
+  vector<int> res;
+  if(!root) return res;
+  if(!isLeaf(root)) res.push_back(root->data);
+  addLeftBoundary(root,res);
+  addLeaves(root,res);
+  addRightBoundary(root,res);
+  return res;
+  
 }
 
 
@@ -64,7 +79,11 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  vector<vector<int>> res = boundaryTraversal(root); // TC and SC - O(N)
+  vector<int> res = boundaryTraversal(root); // TC and SC - O(N)
+
+  for(auto it: res){
+    cout << it << " ";
+  }
 
   return 0;
 }
