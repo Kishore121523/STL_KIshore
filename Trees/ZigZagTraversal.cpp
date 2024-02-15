@@ -8,8 +8,8 @@ class Node{
   Node* right;
 
   public:
-  Node(int data){
-    data = data;
+  Node(int data1){
+    data = data1;
     left = right = NULL;
   }
 
@@ -23,12 +23,14 @@ vector<vector<int>> zigZag(Node* root){
 
   queue<Node*> nodesQueue;
   nodesQueue.push(root);
+
   bool leftToRight = true;
 
   while(!nodesQueue.empty()){
     int size = nodesQueue.size();
-    vector<int> row;
+    vector<int> row(size);
 
+    // traversing all the nodes in that level
     for(int i=0; i<size;i++){
       Node* newNode = nodesQueue.front();
       nodesQueue.pop();
@@ -39,13 +41,9 @@ vector<vector<int>> zigZag(Node* root){
 
       if(newNode->left != NULL) nodesQueue.push(newNode->left);
       if(newNode->right != NULL) nodesQueue.push(newNode->right);
-      row.push_back(newNode->data);
     }
 
     leftToRight = !leftToRight;
-     for(auto it2: row){
-      cout << it2 << " ";
-    }
     result.push_back(row);
   }
 
@@ -66,11 +64,11 @@ int main(){
 
   vector<vector<int>> res = zigZag(root); // TC and SC - O(N)
 
-  // for(auto it: res){
-  //   for(auto it2: it){
-  //     cout << it2 << " ";
-  //   }
-  // }
+  for(auto it: res){
+    for(auto it2: it){
+      cout << it2 << " ";
+    }
+  }
 
   return 0;
 }

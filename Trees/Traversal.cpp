@@ -8,8 +8,8 @@ class Node{
   Node* right;
 
   public:
-  Node(int data){
-    data = data;
+  Node(int data1){
+    data = data1;
     left = right = NULL;
   }
 
@@ -45,19 +45,22 @@ void postOrder(Node* root){
 vector<vector<int>> levelOrder(Node* root){
   vector<vector<int>> ans;
   if(root == NULL) return ans;
-  queue<Node*> q;
 
+  queue<Node*> q;
   q.push(root);
 
   while(!q.empty()){
     int size = q.size();
     vector<int> level;
 
+    // traversing all the nodes in that level
     for(int i=0;i<size;i++){
       Node* node = q.front();
       q.pop();
+
       if(node->left != NULL) q.push(node->left);
       if(node->right != NULL) q.push(node->right);
+      
       level.push_back(node->data);
     }
     ans.push_back(level);

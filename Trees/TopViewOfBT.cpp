@@ -8,8 +8,8 @@ class Node{
   Node* right;
 
   public:
-  Node(int data){
-    data = data;
+  Node(int data1){
+    data = data1;
     left = right = NULL;
   }
 
@@ -54,8 +54,6 @@ vector<int> topView(Node* root){
 
   return ans;
 }
-
-
 
 int main(){
   Node* root = new Node(1);

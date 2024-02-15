@@ -8,8 +8,8 @@ class Node{
   Node* right;
 
   public:
-  Node(int val){
-    data = val;
+  Node(int data1){
+    data = data1;
     left = right = NULL;
   }
 };
