@@ -137,9 +137,5 @@ int main(){
   cout << "\n";
 
   isBalanced(root);
-
-  
-
-
   return 0;
 }
