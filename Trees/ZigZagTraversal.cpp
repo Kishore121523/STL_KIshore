@@ -30,7 +30,7 @@ vector<vector<int>> zigZag(Node* root){
     int size = nodesQueue.size();
     vector<int> row(size);
 
-    // traversing all the nodes in that level
+    // traversing all the nodes in that level to determine the answer
     for(int i=0; i<size;i++){
       Node* newNode = nodesQueue.front();
       nodesQueue.pop();
