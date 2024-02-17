@@ -30,19 +30,23 @@ vector<vector<int>> zigZag(Node* root){
     int size = nodesQueue.size();
     vector<int> row(size);
 
-    // traversing all the nodes in that level 
+    // traversing all the nodes in a specific level of the tree
     for(int i=0; i<size;i++){
+      // Create a new Node and assign it with the front element
       Node* newNode = nodesQueue.front();
       nodesQueue.pop();
 
+      // If lefttoRight is true then add the element from front else add the element from back in reverse order
       int indexToInsert = (leftToRight) ? i : (size-1-i);
 
       row[indexToInsert] = newNode->data;
 
+      // Push the current nodes children nodes if any to the queue
       if(newNode->left != NULL) nodesQueue.push(newNode->left);
       if(newNode->right != NULL) nodesQueue.push(newNode->right);
     }
 
+    // After a level is completed, switch the leftToRight bool value accordingly
     leftToRight = !leftToRight;
     result.push_back(row);
   }
