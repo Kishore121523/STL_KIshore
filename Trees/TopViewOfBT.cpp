@@ -24,7 +24,7 @@ vector<int> topView(Node* root){
   queue<pair<Node*, int>> q;
   map<int, int> mpp;
 
-  // push the initial root node to the queue
+  // push the initial root node to the queue and the initial line number will be 0
   q.push({root,0});
 
   // iterate through each level of the tree
