@@ -20,14 +20,14 @@ vector<int> topView(Node* root){
   vector<int> ans;
   if(root==NULL) return ans;
 
-  // create a map and a queue datastructure
+  // create a map and a queue data structures
   queue<pair<Node*, int>> q;
   map<int, int> mpp;
 
   // push the initial root node to the queue
   q.push({root,0});
 
-  // iterate through the tree
+  // iterate through each level of the tree
   while(!q.empty()){
     auto it = q.front();
     q.pop();
