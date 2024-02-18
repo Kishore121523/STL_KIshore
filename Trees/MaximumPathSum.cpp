@@ -23,6 +23,7 @@ int maxPath(Node* node, int &maxi){
   int lh = max(0, maxPath(node->left,maxi));
   int rh = max(0,maxPath(node->right,maxi));
 
+  // The value of the sum will be lh+rh plus the current nodes value
   maxi = max(maxi, lh+rh+node->data);
 
   return (node->data) + max(lh,rh);
