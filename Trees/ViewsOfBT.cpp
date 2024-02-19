@@ -59,7 +59,7 @@ vector<int> bottomView(Node* root){
   vector<int> ans;
   if(root==NULL) return ans;
 
-  // create a queue
+  // create a queue and map
   queue<pair<Node*, int>> q;
   map<int, int> mpp;
 
