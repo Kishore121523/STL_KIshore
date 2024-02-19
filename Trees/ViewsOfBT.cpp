@@ -72,13 +72,8 @@ vector<int> bottomView(Node* root){
     Node* node = it.first;
     int line = it.second;
 
-    // if the same line sees another value when going further down in the tree, replace that value for that line so we get the bottom most value in that line
-    if(mpp.find(line) == mpp.end()) {
-      mpp[line] = node->data;
-    }
-    else{
-      mpp[line] = node->data;
-    }
+    // if the same line sees another value when going further down in the tree, REPLACE that value for that line so we get the bottom most value in that line
+    mpp[line] = node->data;
 
     if(node->left != NULL){
       q.push({node->left,line-1});
