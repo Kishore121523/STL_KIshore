@@ -55,6 +55,46 @@ vector<int> topView(Node* root){
   return ans;
 }
 
+vector<int> bottomView(Node* root){
+  vector<int> ans;
+  if(root==NULL) return ans;
+
+  // create a queue
+  queue<pair<Node*, int>> q;
+  map<int, int> mpp;
+
+  q.push({root,0});
+
+  while(!q.empty()){
+    auto it = q.front();
+    q.pop();
+
+    Node* node = it.first;
+    int line = it.second;
+
+    // if the same line sees another value when going further down in the tree, replace that value for that line so we get the bottom most value in that line
+    if(mpp.find(line) == mpp.end()) {
+      mpp[line] = node->data;
+    }
+    else{
+      mpp[line] = node->data;
+    }
+
+    if(node->left != NULL){
+      q.push({node->left,line-1});
+    }
+    if(node->right != NULL){
+      q.push({node->right,line+1});
+    }
+  }
+
+   for(auto it: mpp){
+    ans.push_back(it.second);
+  }
+
+  return ans;
+}
+
 int main(){
   Node* root = new Node(1);
   root->left = new Node(2);
@@ -65,9 +105,17 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  vector<int> res = topView(root); // TC and SC - O(N)
+  vector<int> topViewAns = topView(root); // TC and SC - O(N)
 
-    for(auto it2: res){
+    for(auto it2: topViewAns){
+      cout << it2 << " ";
+    }
+
+    cout << "\n";
+
+    vector<int> bottomViewAns = bottomView(root); // TC and SC - O(N)
+
+    for(auto it2: bottomViewAns){
       cout << it2 << " ";
     }
 
