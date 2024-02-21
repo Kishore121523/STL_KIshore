@@ -101,7 +101,7 @@ vector<int> sideView(Node* root){
 
   while(!q.empty()){
     int size = q.size();
- 
+
     // traversing all the nodes in that level
     for(int i=0;i<size;i++){
       Node* node = q.front();
@@ -148,10 +148,8 @@ int main(){
 
     vector<int>sideViewAns = sideView(root); // TC and SC - O(N)
 
-     for(auto it: sideViewAns){
- 
+    for(auto it: sideViewAns){
       cout << it << " ";
-    
   }
 
   return 0;
