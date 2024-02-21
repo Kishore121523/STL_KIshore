@@ -95,31 +95,26 @@ vector<int> sideView(Node* root){
   if(root==NULL) return ans;
 
   // create a queue and map
-  queue<pair<Node*, int>> q;
-  map<int, int> mpp;
+  queue<Node*> q;
 
-  q.push({root,0});
+  q.push(root);
 
   while(!q.empty()){
-    auto it = q.front();
-    q.pop();
+    int size = q.size();
 
-    Node* node = it.first;
-    int line = it.second;
+    // traversing all the nodes in that level
+    for(int i=0;i<size;i++){
+      Node* node = q.front();
+      q.pop();
 
-    // if the same line sees another value when going further down in the tree, REPLACE that value for that line so we get the bottom most value in that line
-    mpp[line] = node->data;
-
-    if(node->left != NULL){
-      q.push({node->left,line-1});
+      if(node->left != NULL) q.push(node->left);
+      if(node->right != NULL) q.push(node->right);
+      
+      // for left side view we have to push the first node of each level hence the condition should be if(i==0){ans.push_back(node->data)}
+      if(i==size-1){
+        ans.push_back(node->data);
+      }
     }
-    if(node->right != NULL){
-      q.push({node->right,line+1});
-    }
-  }
-
-   for(auto it: mpp){
-    ans.push_back(it.second);
   }
 
   return ans;
@@ -151,11 +146,13 @@ int main(){
 
     cout << "\n";
 
-    vector<int> sideViewAns = sideView(root); // TC and SC - O(N)
+    vector<int>sideViewAns = sideView(root); // TC and SC - O(N)
 
-    for(auto it2: sideViewAns){
-      cout << it2 << " ";
-    }
+     for(auto it: sideViewAns){
+ 
+      cout << it << " ";
+    
+  }
 
   return 0;
 }
