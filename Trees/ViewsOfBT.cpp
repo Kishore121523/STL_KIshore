@@ -114,5 +114,13 @@ int main(){
       cout << it2 << " ";
     }
 
+    cout << "\n";
+
+    vector<int> sideViewAns = sideView(root); // TC and SC - O(N)
+
+    for(auto it2: sideViewAns){
+      cout << it2 << " ";
+    }
+
   return 0;
 }
