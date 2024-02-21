@@ -94,14 +94,14 @@ vector<int> sideView(Node* root){
   vector<int> ans;
   if(root==NULL) return ans;
 
-  // create a queue and map
+  // create a queue
   queue<Node*> q;
 
   q.push(root);
 
   while(!q.empty()){
     int size = q.size();
-
+ 
     // traversing all the nodes in that level
     for(int i=0;i<size;i++){
       Node* node = q.front();
