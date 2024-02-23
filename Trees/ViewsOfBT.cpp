@@ -110,7 +110,8 @@ vector<int> sideView(Node* root){
       if(node->left != NULL) q.push(node->left);
       if(node->right != NULL) q.push(node->right);
       
-      // for left side view we have to push the first node of each level hence the condition should be if(i==0){ans.push_back(node->data)}
+      // for left side view we have to push the first node of each level hence the condition should be 
+      // if(i==0){ans.push_back(node->data)} - i==0 condition makes sure that the first node of every level is pushed
       if(i==size-1){
         ans.push_back(node->data);
       }
