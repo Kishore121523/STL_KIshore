@@ -66,7 +66,7 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
-  vector<vector<int>> res = zigZag(root); // TC and SC - O(N)
+  vector<vector<int>> res = zigZag(root);
 
   for(auto it: res){
     for(auto it2: it){
