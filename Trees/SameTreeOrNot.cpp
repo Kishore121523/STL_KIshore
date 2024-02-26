@@ -25,6 +25,7 @@ bool sameTreeOrNot(Node* root,Node* root2){
 
 // Same tree or Not check code
 int main(){
+  // Tree 1
   Node* root = new Node(1);
   root->left = new Node(2);
   root->right = new Node(3);
@@ -34,6 +35,7 @@ int main(){
   root->right->left = new Node(6);
   root->right->right = new Node(7);
 
+  // Tree 2
   Node* root2 = new Node(1);
   root2->left = new Node(2);
   root2->right = new Node(3);
