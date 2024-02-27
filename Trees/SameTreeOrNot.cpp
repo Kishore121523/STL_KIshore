@@ -20,6 +20,7 @@ bool sameTreeOrNot(Node* root,Node* root2){
     return root==root2;
   }
 
+  // This goes through the entire 2 trees and checks whether or not each node's value is equal to each other
   return (root->data == root2->data) && sameTreeOrNot(root->left, root2->left) && sameTreeOrNot(root->right, root2->right);
 }
 
