@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Creating a class called as Node which acts a user defined variable for creating the structure of the tree
 class Node{
   public:
   int data;
