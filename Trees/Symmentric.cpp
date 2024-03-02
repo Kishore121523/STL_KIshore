@@ -19,6 +19,8 @@ class Node{
 bool isSymmentricFoo(Node* left, Node* right){
   if(left == NULL || right == NULL) return left==right;
   if(left->data != right->data) return false;
+
+  //Move left and right simulataneously
   return isSymmentricFoo(left->left, right->right) && isSymmentricFoo(left->right, right->left); 
 }
 
