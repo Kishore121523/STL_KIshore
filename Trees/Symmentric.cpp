@@ -39,6 +39,6 @@ int main(){
   root->right->left = new Node(4);
   root->right->right = new Node(3);
 
-  cout << isSymmentric(root);
+  cout << isSymmentric(root); // TC and SC = O(N)
   return 0;
 }
