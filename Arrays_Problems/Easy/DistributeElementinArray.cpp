@@ -18,7 +18,7 @@ vector<int> resultArray(vector<int>& nums) {
         arr2.push_back(nums[1]);
         
         int start = 2;
-        int end = nums.size();
+        int end = nums.size(); // 3
         
         for(int i=start; i<end; i++){
             if(arr1.back() > arr2.back()) arr1.push_back(nums[i]);
@@ -32,6 +32,11 @@ vector<int> resultArray(vector<int>& nums) {
 
 int main(){
   vector<int> nums = {2,1,3};
-  resultArray(nums);
+  vector<int> res;
+  res = resultArray(nums);
+
+  for(auto it: res){
+    cout << it << " ";
+  }
   return 0;
 }
