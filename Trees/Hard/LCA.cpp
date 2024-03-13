@@ -33,10 +33,7 @@ Node* getLCA(Node* root, Node* p, Node* q){
   else {
     return root;
   }
-  
 }
-
-
 
 int main(){
   Node* root = new Node(1);
