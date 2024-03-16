@@ -21,6 +21,7 @@ Node* getLCA(Node* root, Node* p, Node* q){
     return root;
   }
 
+  // Go to the leaf nodes using the recursion and return the values as below
   Node* left = getLCA(root->left,p,q);
   Node* right = getLCA(root->right,p,q);
 
