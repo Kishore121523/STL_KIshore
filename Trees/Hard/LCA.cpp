@@ -25,6 +25,7 @@ Node* getLCA(Node* root, Node* p, Node* q){
   Node* left = getLCA(root->left,p,q);
   Node* right = getLCA(root->right,p,q);
 
+  // Go to a node and check its left and right child... Return right if left child is null
   if(left == NULL){
     return right;
   }
