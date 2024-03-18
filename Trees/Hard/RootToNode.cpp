@@ -22,6 +22,7 @@ bool getPath (Node* root, vector<int> &arr, int x){
   arr.push_back(root->data);
 
   if(root->data == x) return true;
+  // Iterate recursively through the entire tree until you find the X
   if(getPath(root->left,arr,x) || getPath(root->right,arr,x)) return true;
   
   arr.pop_back();
