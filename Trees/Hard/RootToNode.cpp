@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// Class definition for Tree
 class Node{
   public:
   int data;
