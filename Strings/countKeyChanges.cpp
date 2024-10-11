@@ -18,7 +18,7 @@ int countKeyChanges(string s) {
     }
 
 int main(){
-  string s = "AaAaAaaA";
-  cout << countKeyChanges(s);
+  string s = "AaAaAabA";
+  cout << "Key changes" << countKeyChanges(s);
   return 0;
 }
